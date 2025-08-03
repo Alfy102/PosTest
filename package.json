@@ -1,0 +1,21 @@
+{
+  "name": "posman-ui-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.54.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "typescript-eslint": "^8.38.0"
+  }
+}
