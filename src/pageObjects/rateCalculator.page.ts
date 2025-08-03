@@ -52,12 +52,22 @@ export class RateCalculatorPage {
         return this.appRateCalculator.locator(PosmanResources.APP_RATE_CALCULATOR_QUOTE)
     }
 
+    /**
+     * Intercept API request to wait and get response
+     * @param url string
+     * @param timeout number
+     * @param statusCode number
+     */
     async interceptRequest(url: string, timeout: number, statusCode: number) {
         const response = await this.page.waitForResponse(response => response.url().includes(url), { timeout });
         expect(response.status()).toBe(statusCode);
         return await response.json();
     }
 
+    /**
+     * Enter from country post code and wait for API request to complete
+     * @param postCode string
+     */
     async enterFromCountryPostCode(postCode: string) {
         await this.fromCountryPostCodeInput.fill(postCode)
         const intercept = this.interceptRequest(PosmanResources.API_GET_STATE_BY_POSTCODE, 10000, 200)
@@ -102,6 +112,10 @@ export class RateCalculatorPage {
         await this.page.getByRole('option', { name: country }).click()
     }
 
+    /**
+     * Enter weight to be calculated
+     * @param weight number
+     */
     async enterWeight(weight: number) {
         await this.weightInput.fill(weight.toString())
     }

@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "show-report": "npx playwright show-report",
+    "install": "npx playwright install",
+    "test_firefox": "npx playwright test --project=Pos_E2E_Firefox",
+    "test_chromium": "npx playwright test --project=Pos_E2E_Chromium",
+    "test_edge": "npx playwright test --project=Pos_E2E_Edge"
   },
   "keywords": [],
   "author": "",
