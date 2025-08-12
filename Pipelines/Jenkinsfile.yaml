@@ -6,18 +6,13 @@ Stage1:
   stage: Stage1
   steps:
     - script:
-        name: Print working directory
+        name: "Print working directory"
         script: |
-          if [ -z "$PWD" ]; then
-            echo "Current working directory is empty"
-          else
-            echo "Current working directory: $PWD"
-          fi
-
+          echo "Current working directory: ${pwd()}"
 Stage2:
   stage: Stage2
   steps:
     - script:
-        name: Print message
+        name: "Print message"
         script: |
           echo "Stage2 Step1"
