@@ -1,17 +1,29 @@
 pipeline {
     agent any
     stages {
-      parallel{
-        stage('Stage1') {
-            steps {
-                echo 'Stage1 Step1'
+        stage('Build and Test') {
+            parallel {
+                stage('Build') {
+                    steps {
+                        sh 'echo "Building the application"'
+                    }
+                }
+                stage('Unit Tests') {
+                    steps {
+                        sh 'echo "Running unit tests"'
+                    }
+                }
+                stage('Linting') {
+                    steps {
+                        sh 'echo "Running linting"'
+                    }
+                }
             }
         }
-        stage('Stage2') {
+        stage('Deploy') {
             steps {
-                echo 'Stage2 Step1'
+                sh 'echo "Deploying the application"'
             }
         }
-      }
     }
 }
