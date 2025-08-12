@@ -1,0 +1,23 @@
+stages:
+  - Stage1
+  - Stage2
+
+Stage1:
+  stage: Stage1
+  steps:
+    - script:
+        name: Print working directory
+        script: |
+          if [ -z "$PWD" ]; then
+            echo "Current working directory is empty"
+          else
+            echo "Current working directory: $PWD"
+          fi
+
+Stage2:
+  stage: Stage2
+  steps:
+    - script:
+        name: Print message
+        script: |
+          echo "Stage2 Step1"
