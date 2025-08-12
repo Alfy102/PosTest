@@ -3,18 +3,14 @@ pipeline {
     stages {
         stage('Stage1') {
             steps {
+                // get current working directory
+                echo "Current working directory: ${pwd()}"
                 echo 'Stage1 Step1'
-            }
-            steps {
-                echo 'Stage1 Step2'
             }
         }
         stage('Stage2') {
             steps {
                 echo 'Stage2 Step1'
-            }
-            steps {
-                echo 'Stage2 Step2'
             }
         }
     }
