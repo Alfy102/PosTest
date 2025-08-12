@@ -5,14 +5,10 @@ stages:
 Stage1:
   stage: Stage1
   steps:
-    - script:
-        name: "Print working directory"
-        script: |
-          echo "Current working directory: ${pwd()}"
+    - script: |
+        echo "Current working directory: ${pwd()}"
 Stage2:
   stage: Stage2
   steps:
-    - script:
-        name: "Print message"
-        script: |
-          echo "Stage2 Step1"
+    - script: |
+        echo "Stage2 Step1"
