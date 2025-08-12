@@ -1,12 +1,10 @@
-stages:
-  - name: 'Stage1'
-    agent: any
-    steps:
-      - sh: |
-          echo "Current working directory: ${pwd()}"
-
-  - name: 'Stage2'
-    agent: any
-    steps:
-      - sh: |
-          echo "Stage2 Step1"
+pipeline:
+  agent:
+    any:
+  stages:
+    - stage: "Stage1"
+      steps:
+        - sh "echo 'Current working directory: ${pwd()}'"
+    - stage: "Stage2"
+      steps:
+        - sh "echo 'Stage2 Step1'"
