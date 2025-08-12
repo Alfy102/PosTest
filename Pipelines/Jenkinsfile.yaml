@@ -1,14 +1,12 @@
 stages:
-  - Stage1
-  - Stage2
+  - name: 'Stage1'
+    agent: any
+    steps:
+      - sh: |
+          echo "Current working directory: ${pwd()}"
 
-Stage1:
-  stage: Stage1
-  steps:
-    echoPwd:
-      - echo "Current working directory: ${pwd()}"
-Stage2:
-  stage: Stage2
-  steps:
-    echoStep1:
-      - echo "Stage2 Step1"
+  - name: 'Stage2'
+    agent: any
+    steps:
+      - sh: |
+          echo "Stage2 Step1"
